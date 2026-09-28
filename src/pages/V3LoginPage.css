@@ -115,13 +115,19 @@
   }
 
   .v3-layout-grid-desktop {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 30px;
     padding-bottom: 40px;
   }
 
   .v3-right-col {
-    padding: 0 20px;
+    order: 1; /* Login Form comes FIRST right after top header on mobile */
+    padding: 24px 20px 0 20px;
+  }
+
+  .v3-left-col {
+    order: 2; /* Hero headline & graphic come SECOND on mobile */
   }
 
   .v3-table-book-detail {

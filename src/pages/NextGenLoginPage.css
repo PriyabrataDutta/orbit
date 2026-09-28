@@ -60,3 +60,31 @@
   height: 100%;
   width: 100%;
 }
+
+@media (max-width: 1024px) {
+  .ng-page-wrapper {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .ng-main-container {
+    height: auto;
+  }
+
+  .ng-layout-grid-desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 40px;
+  }
+
+  .ng-right-login-col {
+    order: 1; /* Login card appears FIRST right after top header on mobile */
+    padding: 20px 20px 0 20px;
+  }
+
+  .ng-left-experience-col {
+    order: 2; /* Hero graphics & info come SECOND */
+  }
+}
