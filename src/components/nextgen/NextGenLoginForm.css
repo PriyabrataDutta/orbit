@@ -1,0 +1,337 @@
+.ng-auth-card {
+  position: absolute;
+  right: 65px;
+  top: 30px;
+  width: 460px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(80, 90, 150, 0.14);
+  border-radius: 28px;
+  box-shadow: 0 30px 80px rgba(31, 38, 90, 0.16);
+  padding: 40px 42px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-sizing: border-box;
+  z-index: 20;
+}
+
+/* Header */
+.ng-auth-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.ng-welcome-subtitle {
+  font-size: 17px;
+  font-weight: 500;
+  color: #64748b;
+  line-height: 1.2;
+}
+
+.ng-brand-title-dominant {
+  font-size: 48px;
+  font-weight: 750;
+  letter-spacing: -0.035em;
+  background: linear-gradient(135deg, #3f46f3 0%, #6d4aff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin: 2px 0 6px 0;
+  line-height: 1.05;
+}
+
+.ng-auth-desc {
+  font-size: 15px;
+  color: #64748b;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+}
+
+/* Alerts */
+.ng-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.ng-alert-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+}
+
+.ng-alert-success {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #16a34a;
+}
+
+/* Microsoft SSO Button (Height 58px) */
+.ng-sso-primary-btn {
+  width: 100%;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.ng-sso-primary-btn:hover {
+  border-color: #94a3b8;
+  background: #f8fafc;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.ng-ms-grid-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ng-sso-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+  flex: 1;
+  text-align: left;
+  margin-left: 14px;
+}
+
+.ng-sso-arrow {
+  color: #64748b;
+  transition: transform 0.2s ease;
+}
+
+.ng-sso-primary-btn:hover .ng-sso-arrow {
+  transform: translateX(3px);
+  color: #3f46f3;
+}
+
+/* OR Divider */
+.ng-or-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 2px 0;
+}
+
+.ng-or-divider .ng-line {
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.ng-or-divider .ng-or-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.1em;
+}
+
+/* Login Form */
+.ng-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ng-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ng-field-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.ng-input-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.ng-input-prefix-icon {
+  position: absolute;
+  left: 16px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+/* Inputs (Height 56px) */
+.ng-text-input {
+  width: 100%;
+  height: 56px;
+  padding: 0 16px 0 46px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 13px;
+  font-size: 14.5px;
+  color: #0f172a;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.ng-text-input:focus {
+  background: #ffffff;
+  border-color: #6d4aff;
+  box-shadow: 0 0 0 3px rgba(109, 74, 255, 0.12);
+}
+
+.ng-password-toggle-btn {
+  position: absolute;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.ng-password-toggle-btn:hover {
+  color: #334155;
+}
+
+/* Options Row */
+.ng-options-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.ng-checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.ng-custom-checkbox {
+  width: 17px;
+  height: 17px;
+  accent-color: #3f46f3;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.ng-checkbox-text {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #475569;
+}
+
+.ng-forgot-btn {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #3f46f3;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ng-forgot-btn:hover {
+  color: #6d4aff;
+  text-decoration: underline;
+}
+
+/* Sign In CTA Button (Height 58px) */
+.ng-submit-cta-btn {
+  width: 100%;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(90deg, #4938f5 0%, #7842ff 100%);
+  border: none;
+  border-radius: 13px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(86, 61, 240, 0.22);
+  transition: all 0.2s ease;
+  margin-top: 4px;
+}
+
+.ng-submit-cta-btn:hover:not(:disabled) {
+  transform: translateY(-1.5px);
+  box-shadow: 0 16px 32px rgba(86, 61, 240, 0.32);
+}
+
+.ng-submit-cta-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.ng-btn-loader-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ng-loader-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: ngSpin 0.8s linear infinite;
+}
+
+@keyframes ngSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Security Strip */
+.ng-security-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+  margin-top: 28px;
+}
+
+.ng-sec-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.ng-sec-item .sec-icon {
+  color: #3f46f3;
+}
+
+.ng-sec-divider {
+  width: 1px;
+  height: 16px;
+  background: #e2e8f0;
+}

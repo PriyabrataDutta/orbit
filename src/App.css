@@ -1,0 +1,78 @@
+/* Base layout grid for Desktop */
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(330px, 430px) minmax(360px, 1fr) 386px 150px;
+  gap: 0 24px;
+  align-items: start;
+  margin-top: 30px;
+}
+
+.aside-copy {
+  align-self: center;
+  margin-top: 130px;
+  font-size: 13.5px;
+  letter-spacing: .1em;
+  line-height: 1.5;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .4);
+}
+
+/* ==================== RESPONSIVE BREAKPOINTS ==================== */
+
+/* 1. Desktop / Laptop (1150px - 1400px) */
+@media (max-width: 1400px) {
+  .hero-grid {
+    grid-template-columns: minmax(320px, 400px) 1fr 380px;
+  }
+
+  .aside-copy {
+    display: none;
+  }
+}
+
+/* 2. Tablet Landscape / Medium Screens (768px - 1150px) */
+@media (max-width: 1150px) {
+  .hero-grid {
+    grid-template-columns: 1fr 380px;
+  }
+}
+
+/* 3. Mobile Devices (< 768px): PUSH LOGIN CARD TO TOP BELOW HEADER */
+@media (max-width: 768px) {
+  .wrap {
+    padding: 16px 15px 0;
+  }
+
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 20px;
+  }
+
+  /* Order 1: Push Login Card directly to top right after Topbar header */
+  .hero-grid > div:nth-child(3),
+  .card {
+    order: 1;
+    width: 100%;
+  }
+
+  /* Order 2: Value Props */
+  .hero-grid > div:nth-child(1) {
+    order: 2;
+  }
+
+  /* Order 3: Map Visual */
+  .hero-grid > div:nth-child(2) {
+    order: 3;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+
+  .building {
+    display: none;
+  }
+}

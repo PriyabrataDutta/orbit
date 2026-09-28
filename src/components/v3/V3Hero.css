@@ -1,0 +1,480 @@
+.v3-hero-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  padding-left: 56px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
+/* 1. Top Section Grid: Headline on Left, Central Graphic on Right */
+.v3-hero-top-grid {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+/* Headline Block */
+.v3-hero-headline-block {
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  z-index: 10;
+}
+
+.v3-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #64748b;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.v3-hero-heading {
+  font-size: 52px;
+  font-weight: 850;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  color: #101534;
+  margin: 0;
+}
+
+.v3-hero-heading .v3-block-line {
+  display: block;
+}
+
+.v3-gradient-text {
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 40%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.v3-hero-copy {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #475569;
+  margin-top: 16px;
+  margin-bottom: 0;
+  max-width: 440px;
+}
+
+/* 2. Central Graphic Container */
+.v3-graphic-container {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+/* Soft Glow Background Aura */
+.v3-glow-backdrop {
+  position: absolute;
+  width: 320px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.25) 0%, rgba(79, 70, 229, 0.12) 45%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+/* Concentric Orbiting Rings */
+.v3-orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.v3-orbit-ring.outer {
+  width: 360px;
+  height: 180px;
+  border: 1.5px dashed rgba(99, 102, 241, 0.35);
+  transform: rotateX(65deg);
+  animation: spinOuter 40s linear infinite;
+}
+
+.v3-orbit-ring.inner {
+  width: 250px;
+  height: 125px;
+  border: 1.5px solid rgba(124, 58, 237, 0.4);
+  transform: rotateX(65deg);
+  animation: spinOuter 25s linear infinite reverse;
+}
+
+@keyframes spinOuter {
+  from { transform: rotateX(65deg) rotateZ(0deg); }
+  to { transform: rotateX(65deg) rotateZ(360deg); }
+}
+
+.v3-orbit-particle {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 10px #38bdf8;
+}
+
+.p-top { top: 0; left: 50%; }
+.p-right { bottom: 15%; right: 15%; }
+.p-left { top: 30%; left: 10%; }
+
+/* Floating Node Glass Cards */
+.v3-node-card {
+  position: absolute;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 14px;
+  box-shadow: 0 10px 25px -4px rgba(16, 21, 52, 0.08), 0 4px 10px -2px rgba(16, 21, 52, 0.04);
+  z-index: 20;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: floatCard 5s ease-in-out infinite alternate;
+}
+
+.v3-node-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 18px 35px -6px rgba(79, 70, 229, 0.22);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+@keyframes floatCard {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Card Positions */
+.node-documents { top: 20px; center: 50%; left: 45%; animation-delay: 0.5s; }
+.node-erp { top: 110px; left: 40px; animation-delay: 0s; }
+.node-crm { top: 115px; right: 40px; animation-delay: 1.5s; }
+.node-analytics { bottom: 105px; left: 80px; animation-delay: 2s; }
+.node-policies { bottom: 100px; right: 70px; animation-delay: 1s; }
+
+.v3-node-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.v3-node-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* Node Icon Colors */
+.icon-green { background: #dcfce7; color: #16a34a; }
+.icon-blue { background: #dbeafe; color: #2563eb; }
+.icon-pink { background: #fce7f3; color: #db2777; }
+.icon-purple { background: #f3e8ff; color: #9333ea; }
+.icon-yellow { background: #fef3c7; color: #d97706; }
+
+/* Dotted Connector Lines */
+.v3-connector-line {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+  stroke: rgba(99, 102, 241, 0.3);
+  stroke-dasharray: 4 4;
+}
+
+/* Central Orbiter AI Glowing Sphere */
+.v3-central-orb {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 15;
+}
+
+.v3-orb-sphere {
+  position: relative;
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #4158d0 0%, #613ee6 40%, #1e1b4b 100%);
+  box-shadow: 
+    inset 0 4px 12px rgba(255, 255, 255, 0.6),
+    inset 0 -10px 20px rgba(0, 0, 0, 0.5),
+    0 0 35px rgba(99, 102, 241, 0.5),
+    0 15px 40px rgba(124, 58, 237, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+.v3-orb-icon-mark {
+  margin-bottom: 2px;
+}
+
+.v3-orb-text {
+  font-size: 13px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* 3D Glass Pedestal Base */
+.v3-pedestal-base {
+  position: absolute;
+  bottom: 25px;
+  width: 440px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(224, 231, 255, 0.35) 100%);
+  border: 1px solid rgba(199, 210, 254, 0.8);
+  box-shadow: 
+    inset 0 2px 10px rgba(255, 255, 255, 0.9),
+    0 15px 30px rgba(30, 27, 75, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateX(60deg);
+  z-index: 2;
+}
+
+.v3-pedestal-ribbon {
+  position: absolute;
+  bottom: 32px;
+  z-index: 25;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 6px 22px;
+  border-radius: 30px;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+  color: #4f46e5;
+}
+
+.v3-ribbon-sep {
+  color: #cbd5e1;
+  font-weight: 400;
+}
+
+/* 3. Bottom Section: Compact Metrics Strip */
+.v3-hero-bottom-section {
+  display: flex;
+  width: 100%;
+  max-width: 760px;
+}
+
+/* Metrics Row - Glass Card Bar */
+.v3-metrics-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 20px;
+  padding: 14px 24px;
+  box-shadow: 0 8px 30px rgba(16, 21, 52, 0.06);
+}
+
+.v3-metric-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.v3-metric-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.v3-badge-blue { background: #eff6ff; color: #2563eb; }
+.v3-badge-green { background: #f0fdf4; color: #16a34a; }
+.v3-badge-purple { background: #faf5ff; color: #9333ea; }
+
+.v3-metric-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.v3-metric-val {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.v3-metric-lbl {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Ask Orbiter Interactive Query Bar */
+.v3-query-container {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 20px;
+  padding: 12px 16px;
+  box-shadow: 0 12px 35px -6px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.v3-query-container:focus-within {
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 16px 40px -6px rgba(79, 70, 229, 0.16);
+}
+
+.v3-query-top-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.v3-ask-btn-tag {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #e0e7ff;
+  color: #4338ca;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.v3-ask-btn-tag:hover {
+  background: #c7d2fe;
+}
+
+.v3-query-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.v3-query-input::placeholder {
+  color: #94a3b8;
+}
+
+.v3-query-action-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  border: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.v3-query-action-btn:hover {
+  transform: scale(1.08);
+}
+
+/* Query Bottom Metadata Row */
+.v3-query-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 4px;
+  border-top: 1px solid rgba(241, 245, 249, 0.8);
+  font-size: 12px;
+}
+
+.v3-powered-by {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.v3-check-icon {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  color: #475569;
+}
+
+.v3-integrations-chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.v3-chip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.v3-chip-icon {
+  width: 14px;
+  height: 14px;
+}

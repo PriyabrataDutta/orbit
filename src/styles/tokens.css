@@ -1,0 +1,16 @@
+:root {
+  --indigo-900: #0d1150;
+  --indigo-800: #161c6e;
+  --indigo-700: #232a8f;
+  --violet-600: #5b3df0;
+  --violet-500: #6d4cff;
+  --violet-400: #8f7bff;
+  --cyan-300: #8fd8ff;
+  --ink: #131640;
+  --ink-soft: #4b4f75;
+  --line: #dfe2f0;
+  --card: #ffffff;
+  --page: #eef1f8;
+  --font: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --script: "Allura", "Brush Script MT", cursive;
+}

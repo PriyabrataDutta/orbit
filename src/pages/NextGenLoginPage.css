@@ -1,0 +1,62 @@
+.ng-page-wrapper {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: #f7f9ff;
+  color: #10143a;
+  font-family: var(--font, "Plus Jakarta Sans", system-ui, sans-serif);
+}
+
+/* Background Image at Full Visual Strength */
+.ng-bg-building {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.95;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle Spec Gradient Overlay */
+.ng-bg-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(248, 250, 255, 0.78) 0%,
+    rgba(248, 250, 255, 0.50) 48%,
+    rgba(248, 250, 255, 0.16) 75%,
+    rgba(248, 250, 255, 0.08) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Main Canvas (calc(100vh - 80px)) */
+.ng-main-container {
+  height: calc(100vh - 80px);
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.ng-layout-grid-desktop {
+  display: grid;
+  grid-template-columns: 64% 36%;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.ng-left-experience-col {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.ng-right-login-col {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}

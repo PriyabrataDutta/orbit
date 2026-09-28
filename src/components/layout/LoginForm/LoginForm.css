@@ -1,0 +1,339 @@
+.card {
+  position: relative;
+  z-index: 1;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 15px; /* 15px equivalent on all sides */
+  box-shadow: 0 14px 40px rgba(0, 0, 50, .22);
+  color: var(--ink);
+  margin-top: -10px;
+  width: 100%;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 6px;
+  letter-spacing: -.01em;
+}
+
+.card .hint {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+
+.alert-error {
+  background: #fde8e8;
+  color: #c53030;
+  border: 1px solid #f8b4b4;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 12.5px;
+  margin-top: 14px;
+}
+
+.alert-success {
+  background: #def7ec;
+  color: #03543f;
+  border: 1px solid #84e1bc;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 12.5px;
+  margin-top: 14px;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 14px;
+  transition: border-color .2s, box-shadow .2s;
+  background: #fff;
+}
+
+.field + .field {
+  margin-top: 16px;
+}
+
+.field:focus-within {
+  border-color: var(--violet-500);
+  box-shadow: 0 0 0 3px rgba(109, 76, 255, .15);
+}
+
+.field svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  stroke: #555a86;
+}
+
+.field .inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--line);
+  padding-left: 12px;
+  min-width: 0;
+}
+
+.field label {
+  font-size: 11.5px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.field input {
+  border: 0;
+  outline: 0;
+  font-size: 13px;
+  color: var(--ink);
+  padding: 3px 0 2px;
+  background: transparent;
+  width: 100%;
+}
+
+.field input::placeholder {
+  color: #6d7196;
+}
+
+.eye {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 4px;
+  display: grid;
+  place-items: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+  font-size: 12px;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.check input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--violet-600);
+}
+
+.row a {
+  color: var(--violet-600);
+  font-weight: 500;
+}
+
+.btn-primary {
+  width: 100%;
+  margin-top: 16px;
+  height: 48px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #4f35e6, #6440f5);
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 10px 24px rgba(90, 60, 240, .35);
+  transition: filter .2s, opacity .2s;
+}
+
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.btn-primary:disabled {
+  opacity: .7;
+  cursor: not-allowed;
+}
+
+.btn-primary svg {
+  width: 18px;
+  height: 18px;
+  stroke: #fff;
+}
+
+.or {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 10px;
+  font-size: 11px;
+  color: #6b6f92;
+}
+
+.or::before,
+.or::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.btn-sso {
+  width: 100%;
+  height: 46px;
+  border: 1.5px solid var(--violet-600);
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  color: var(--indigo-700);
+  font-weight: 600;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background .2s;
+}
+
+.btn-sso:hover {
+  background: #f4f2ff;
+}
+
+.btn-sso svg {
+  width: 20px;
+  height: 20px;
+}
+
+.trust {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.trust div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: #4b4f75;
+  line-height: 1.3;
+}
+
+.trust svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--violet-600);
+  flex: none;
+}
+
+.card-foot {
+  margin-top: 22px;
+  font-size: 10.5px;
+  color: #4b4f75;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card-foot a + a::before {
+  content: "|";
+  margin-right: 8px;
+  color: #b6b9d4;
+}
+
+/* MOBILE OPTIMIZATIONS FOR LOGIN CARD */
+@media (max-width: 768px) {
+  .card {
+    padding: 15px; /* 15px equivalent on all sides */
+    border-radius: 10px;
+    max-width: 100%;
+    margin-top: 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 40, .18);
+  }
+
+  .card h1 {
+    font-size: 22px;
+    margin-top: 0;
+  }
+
+  .card .hint {
+    font-size: 12.5px;
+    margin-top: 4px;
+  }
+
+  .field {
+    margin-top: 14px;
+    padding: 8px 10px;
+    gap: 10px;
+  }
+
+  .field + .field {
+    margin-top: 12px;
+  }
+
+  .field .inner {
+    padding-left: 10px;
+  }
+
+  .field label {
+    font-size: 11px;
+  }
+
+  .field input {
+    font-size: 13px;
+  }
+
+  .row {
+    margin-top: 14px;
+    font-size: 12px;
+  }
+
+  .btn-primary {
+    margin-top: 14px;
+    height: 46px;
+    font-size: 15px;
+  }
+
+  .or {
+    margin: 14px 0 10px;
+  }
+
+  .btn-sso {
+    height: 44px;
+    font-size: 12.5px;
+  }
+
+  .trust {
+    gap: 8px;
+    margin-top: 16px;
+    justify-content: space-around;
+  }
+
+  .trust div {
+    font-size: 10px;
+    gap: 6px;
+  }
+
+  .trust svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .card-foot {
+    margin-top: 18px;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,89 @@
+.route-switcher-dock {
+  position: fixed;
+  bottom: 54px;
+  left: 20px;
+  z-index: 99999;
+  pointer-events: auto;
+}
+
+.route-switcher-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  background: rgba(16, 20, 58, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+}
+
+.route-switcher-pill:hover {
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+}
+
+.route-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.65);
+  padding-left: 8px;
+  padding-right: 2px;
+}
+
+.switch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.switch-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.switch-btn.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #3f46f3 0%, #6d4aff 100%);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 14px rgba(63, 70, 243, 0.4);
+}
+
+.badge-new {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 640px) {
+  .route-switcher-dock {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .route-label {
+    display: none;
+  }
+}
