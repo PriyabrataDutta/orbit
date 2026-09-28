@@ -45,3 +45,23 @@
 .v3-footer-sep {
   color: #cbd5e1;
 }
+
+@media (max-width: 768px) {
+  .v3-footer {
+    height: auto;
+    padding: 10px 16px;
+  }
+
+  .v3-footer-container {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+    font-size: 11px;
+  }
+
+  .v3-footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+}

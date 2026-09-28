@@ -122,3 +122,30 @@
     padding: 0 20px;
   }
 }
+
+@media (max-width: 640px) {
+  .v3-header {
+    height: 60px;
+    padding: 0 16px;
+  }
+
+  .v3-brand-group {
+    gap: 12px;
+  }
+
+  .v3-godrej-text-stack {
+    display: none;
+  }
+
+  .v3-orbiter-tagline {
+    display: none;
+  }
+
+  .v3-header-actions {
+    gap: 10px;
+  }
+
+  .v3-header-action-link span {
+    font-size: 12px;
+  }
+}
